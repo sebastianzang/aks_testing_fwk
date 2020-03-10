@@ -1,0 +1,16 @@
+apiVersion : apps/v1beta1
+kind: Deployment
+metadata:
+  name: "jmeterpd"
+spec:
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: "jmeterpd"
+    spec:
+      containers:
+        - name: "jmeterpd"
+          image: "jmeterpdwidoj.azurecr.io/jmeterpd"
+          ports:
+          - containerPort: 60000
